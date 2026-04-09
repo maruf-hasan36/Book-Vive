@@ -28,7 +28,7 @@ const BookCard = ({ book }) => {
         </div>
         <h2 className="card-title text-2xl">{book.bookName}</h2>
         <p className="font-bold">BY. {book.author}</p>
-        <div className="card-actions justify-between border-t border-dashed border-gray-300 pt-4">
+        <div className="card-actions justify-between border-t border-dashed border-gray-300 pt-5">
           <div className="font-semibold text-xl">{book.category}</div>
           <div className="font-semibold flex gap-1 items-center text-xl ">
             {book.rating} <FaRegStar />
