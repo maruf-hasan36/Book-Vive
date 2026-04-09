@@ -65,7 +65,7 @@ const BookDetails = () => {
           </div>
           <div className="card-actions justify-end">
             <button className="btn border-green-700">Mark as Read</button>
-            <button className="btn btn-primary">Add To Wishlist</button>
+            <button className="btn btn-primary">ADD To Wishlist</button>
           </div>
         </div>
       </div>
