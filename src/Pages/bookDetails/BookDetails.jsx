@@ -1,13 +1,19 @@
+// import { useContext, useState } from "react";
 import { useLoaderData, useParams } from "react-router";
+import { BookContext } from "../../context/BookContext";
+import { useContext } from "react";
 
 const BookDetails = () => {
   const books = useLoaderData();
   const { bookId } = useParams();
 
-  console.log(bookId, books);
+  // const bookContext = use(BookContext);
+  // console.log(bookContext, "book context");
+
+  const { handleMarkAsRead, storedBooks } = useContext(BookContext);
+  console.log(handleMarkAsRead, storedBooks);
 
   const expectedBooks = books.find((book) => book.bookId == bookId);
-  console.log(expectedBooks);
   return (
     <div className="card card-side bg-base-100 shadow-sm w-10/12 mx-auto grid grid-cols-2 mt-20">
       <figure className="bg-base-300 rounded-2xl">
@@ -64,7 +70,12 @@ const BookDetails = () => {
             </p>
           </div>
           <div className="card-actions justify-end">
-            <button className="btn border-green-700">Mark as Read</button>
+            <button
+              onClick={() => handleMarkAsRead(expectedBooks)}
+              className="btn border-green-700"
+            >
+              Mark as Read
+            </button>
             <button className="btn btn-primary">ADD To Wishlist</button>
           </div>
         </div>
