@@ -13,7 +13,7 @@ const BookProvider = ({ children }) => {
       alert("the book is already exist");
     } else {
       setStoredBooks([...storedBooks, currentBook]);
-      alert(`${currentBook.bookName}is added to List`);
+      alert(`${currentBook.bookName}is added to Your List`);
     }
   };
 
