@@ -10,7 +10,8 @@ const BookDetails = () => {
   // const bookContext = use(BookContext);
   // console.log(bookContext, "book context");
 
-  const { handleMarkAsRead, storedBooks } = useContext(BookContext);
+  const { handleMarkAsRead, storedBooks, handleWishlist } =
+    useContext(BookContext);
   console.log(handleMarkAsRead, storedBooks);
 
   const expectedBooks = books.find((book) => book.bookId == bookId);
@@ -76,7 +77,12 @@ const BookDetails = () => {
             >
               Mark as Read
             </button>
-            <button className="btn btn-primary">ADD To Wishlist</button>
+            <button
+              className="btn btn-primary"
+              onClick={() => handleWishlist(expectedBooks)}
+            >
+              ADD To Wishlist
+            </button>
           </div>
         </div>
       </div>
